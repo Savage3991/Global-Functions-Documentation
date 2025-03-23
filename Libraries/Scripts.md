@@ -32,7 +32,7 @@ print(getscriptbytecode(Instance.new("LocalScript"))) -- Output: nil
 ## getscripthash
 
 > [!NOTE]
-> Hash the compressed and encrypted bytecode, don't decrypt and decompress it.
+> Use the compressed and encrypted bytecode, don't decrypt and decompress it.
 > 
 > This function should return `nil` if the script has no bytecode.
 > We encourage this behavior, as it's easier for people to check for `nil`, rather than each executor having its own output.
