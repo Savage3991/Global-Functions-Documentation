@@ -180,7 +180,7 @@ end
 
 ## getcallingscript
 
-Returns the script that's running the current Luau code. This function only returns `nil` for executor threads, if a game thread sets their `script` global to `nil`, it must still return to correct `script`.
+Returns the script that's running the current Luau code. This function only returns `nil` for executor threads, if a game thread sets their `script` global to `nil`, it must still return the correct `script`.
 
 ```luau
 function getcallingscript(): LocalScript | ModuleScript | Script | nil
