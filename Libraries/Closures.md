@@ -228,7 +228,7 @@ OldFunction() -- Output: I am not hooked!
 
 ## getfunctionhash
 
-Returns a Hex represented SHA384 hash of the provided function's instructions/bytecode
+Returns a Hex represented SHA384 hash of the provided function's re-built bytecode
 
 ```luau
 function getfunctionhash(function_to_hash): string
