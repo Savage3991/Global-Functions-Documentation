@@ -83,7 +83,7 @@ print(getscriptclosure(Instance.new("LocalScript"))) -- Output: nil
 
 ## getsenv
 
-Returns the L->gt table of the script's Lua state. This function should allow getting the environment even if game devs set the `script` global to `nil`.
+Returns the environment of the given script thread.
 
 ```luau
 function getsenv(script: Script | LocalScript | ModuleScript): { [any]: any }
@@ -180,7 +180,7 @@ end
 
 ## getcallingscript
 
-Returns the script that's running the current Luau code. This shouldn't just look for the `script` global, as game devs can set it to `nil` and break this approach.
+Returns the script that's running the current Luau code. This function only returns `nil` for executor threads, if a game thread sets their `script` global to `nil`, it must still return to correct `script`.
 
 ```luau
 function getcallingscript(): LocalScript | ModuleScript | Script | nil
@@ -264,7 +264,7 @@ print(Result.AccountAge) -- Output: 0
 
 ## loadstring
 
-Compiles the given string, and returns it runnable in a function.
+Compiles the given string, and returns it runnable in a function. The environment must become `unsafe` after this function is called due to it allowing the modification of globals uncontrollably (see [setfenv](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#setfenv)/[getfenv](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#getfenv) documentation [*Enable Deprecated Functions to View them*])
 
 ```luau
 function loadstring<A...>(src: string, chunkname: string?): ((A...) -> any | nil, string?)
