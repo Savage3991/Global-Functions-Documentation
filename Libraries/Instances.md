@@ -31,7 +31,7 @@ end
 
 ## getnilinstances
 
-Returns a list of instances that aren't descendants of a service provider.
+Returns a list of instances that don't have their parent property set to `nil`.
 
 ```luau
 function getnilinstances(): { Instance }
