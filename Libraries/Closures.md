@@ -59,7 +59,7 @@ DummyYieldingFunction()
 Checks if a given function is a C closure.
 
 ```luau
-function iscclosure(func: (...any) -> (...any): boolean
+function iscclosure(func: (...any) -> (...any)): boolean
 ```
 
 ### Parameter
