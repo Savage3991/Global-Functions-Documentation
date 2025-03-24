@@ -29,7 +29,7 @@ print(getrawmetatable(game).__index(game, "workspace")) -- Output: Workspace
 Sets the metatable of **object** to the metatable provided, bypassing the `__metatable` field.
 
 ```luau
-function setrawmetatable<T>(object: T & any, metatable: { any }): T
+function setrawmetatable<T>(object: T, metatable: { any }): T
 ```
 
 ### Parameters
